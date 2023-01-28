@@ -1,0 +1,37 @@
+[
+    {
+        "name": "user_id",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "select",
+        "relation": "mt1,User,user_id,id"
+    },
+    {
+        "name": "book_id",
+        "dbType": "integer:unsigned:foreign,books,id",
+        "htmlType": "select",
+        "relation": "mt1,Book,book_id,id"
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+
+]

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Response;
 
 class Authenticate extends Middleware
 {
@@ -16,6 +17,12 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             return route('login');
+        }
+        else{
+            return Response::json([
+                'success' => false,
+                'message' => "Un Authorized resource"
+            ], 403);
         }
     }
 }

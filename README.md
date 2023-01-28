@@ -1,65 +1,32 @@
-<h1 align="center"><img src="https://assets.infyom.com/open-source/infyom-logo.png" alt="InfyOm"></h1>
+<h1 align="center">
+<img src="public/image/logo.jpg" alt="simpoLibrary"></h1>
 
-# Laravel Boilerplate for AdminLTE Theme
+# simpoLibrary
 
-Laravel Boilerplate with [AdminLTE](https://adminlte.io/) Theme with [InfyOm Laravel Generator](https://github.com/InfyOmLabs/laravel-generator).
-Following things are ready to be used directly with AdminLTE Theme.
+This is simpo library app to view books
 
-- Signup
-- Login
-- Forgot Password
-- Password Reset
-- Home Layout with Sidebar
+- Admin can create,update,view and delete books
+- User can register,login,view books, like and comment books
 
-## Documentation
 
-Read [Documentation](https://infyom.com/open-source/laravelgenerator/docs/8.0/boilerplates) for detailed installation steps and usage.
+## Installation
 
-## Support Us
+- Clone the repo to your local machine
+- Run composer update command
+- create database of your choice and config the .env file
+- Run php artisan migrate:refresh --seed to create database tables and sample data
+- Run php artisan passport:install command to create API client secret key
+- Run your app php artisan serve
+- now you can visit it at localhost:8000
+- login with email: admin@gmail.com and password: admin
 
-We have created [14+ Laravel packages](https://github.com/InfyOmLabs) and invested a lot of resources into creating these all packages and maintaining them.
+## RESTApi
 
-You can support us by either sponsoring us or buying one of our paid products. Or help us by spreading the word about us on social platforms via tweets and posts.
+- use localhost:8000/api/login on postman to access the user login api
+- enter the credentials and copy the token from the response to postman Bearer Auth
+- now you can visit other endpoints.
 
-### Buy our Paid Products
+## API endpoint
+- list of all books http://localhost:8000/api/books with GET request.
+- list of all favourites books http://localhost:8000/api/favourites/books with GET request.
 
-[![InfyChat](https://assets.infyom.com/open-source/new/infychat-banner.png)](https://1.envato.market/jWeAmM)
-
-You can also check out our other paid products on [CodeCanyon](https://1.envato.market/BXAnR1).
-
-### Sponsors
-
-[Become a sponsor](https://opencollective.com/infyomlabs#sponsor) and get your logo on our README on Github with a link to your site.
-
-<a href="https://opencollective.com/infyomlabs#sponsor"><img src="https://opencollective.com/infyomlabs/sponsors.svg?width=890"></a>
-
-### Backers
-
-[Become a backer](https://opencollective.com/infyomlabs#backer) and get your image on our README on Github with a link to your site.
-
-<a href="https://opencollective.com/infyomlabs#backer"><img src="https://opencollective.com/infyomlabs/backers.svg?width=890"></a>
-
-### Follow Us
-
-- [Twitter](https://twitter.com/infyom)
-- [Facebook](https://www.facebook.com/infyom)
-- [LinkedIn](https://in.linkedin.com/company/infyom-technologies)
-- [Youtube](https://www.youtube.com/channel/UC8IvwfChD6i7Wp4yZp3tNsQ)
-- [Contact Us](https://infyom.com/contact-us)
-
-## Made with InfyOm Generator
-
-Also, Do not forget to add your website to [Made with InfyOm Generator List](https://github.com/InfyOmLabs/laravel-generator/blob/develop/made-with-generator.md) list.
-
-## Security
-
-If you discover any security-related issues, create an issue using the issue tracker.
-
-## Credits
-
-- [InfyOm Technologies](https://github.com/infyomlabs)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

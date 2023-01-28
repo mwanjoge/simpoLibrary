@@ -14,9 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('book/favourite/toggle/{id}', [App\Http\Controllers\BookController::class, 'toggleFavourite'])->name('book.favourite.toggle');
+Route::resource('books', App\Http\Controllers\BookController::class);
+
+
+Route::resource('favourites', App\Http\Controllers\FavouriteController::class);
+
+
+Route::resource('comments', App\Http\Controllers\CommentController::class);
+
+
+Route::resource('users', App\Http\Controllers\UserController::class);

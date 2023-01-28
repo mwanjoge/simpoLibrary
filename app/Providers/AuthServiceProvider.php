@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
+use Illuminate\Auth\Access\Response;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+         'App\Models\Book' => 'App\Policies\BookPolicy',
     ];
 
     /**
@@ -24,7 +27,12 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+        if (! $this->app->routesAreCached()) {
+            Passport::routes();
+        }
+        Gate::define('manage_app', function(User $user) {
+            return $user->role == 'admin' ? Response::allow()
+            : Response::deny('You are not allowed to perform this action.');
+        });
     }
 }

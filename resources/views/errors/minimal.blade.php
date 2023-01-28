@@ -28,8 +28,10 @@
                         @yield('code')
                     </div>
 
-                    <div class="ml-4 text-lg text-gray-500 uppercase tracking-wider">
+                    <div class="ml-4 text-lg text-center text-gray-500 uppercase tracking-wider">
                         @yield('message')
+                        <br><br>
+                        <a href="{{url()->previous()}}" class="m-4" style="background-color: snow; padding: 10px;margin:15px;">Go back</a>
                     </div>
                 </div>
             </div>
